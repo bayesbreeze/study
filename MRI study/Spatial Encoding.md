@@ -13,7 +13,10 @@ relaxation会导致相位变化，并导致信号消失。relaxation是由于磁
 
 <img src="imgs/spinEcho2.png" alt="Alt Text" width="400" />
 
-一个很不错的动画：
+这两个动画都不错：
+
+https://www.youtube.com/watch?v=FxyiH2TjQvI
+
 https://youtu.be/M7yh0To6Wbs?t=1808
 
 通过设置不同的 $T_2^*$ 可以用来计算 $T_2$
