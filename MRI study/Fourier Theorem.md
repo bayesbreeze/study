@@ -151,6 +151,7 @@ $$\Pi(x)=\begin{cases}
 1 & |x|<\frac{1}{2}
 \end{cases}$$
 
+
 $$f(x)=\Pi(x)\cos\pi x=\begin{cases}
 0 & x<-\frac{1}{2}\\
 \cos\pi x & -\frac{1}{2}<x<\frac{1}{2}\\
