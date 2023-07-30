@@ -162,6 +162,7 @@ $$f(x)=\Pi(x)\cos\pi x=\begin{cases}
 能结合convolution来计算running means. running mean就是在一定窗口期做的mean，有Simple Moving Average (SMA)，Weighted Moving Average (WMA)和Exponential Moving Average (EMA)。Rectagle function应该是SMA。
 
 ### 3.Triangle Function
+
 $$\Lambda(x)=\begin{cases}
 0 & |x|>1\\
 1-|x| & |x|<1
@@ -190,7 +191,8 @@ $$\Pi(x)=H(x+\frac{1}{2})-H(x-\frac{1}{2})$$
 
 
 
-Ramp function 
+Ramp function    
+
 $$\begin{alignedat}{1}R(x) & =xH(x)\\
  & =\int_{-\infty}^{x}H(x')dx'\\
  & =\int_{-\infty}^{\infty}H(x')H(x-x')dx'\\
@@ -242,6 +244,7 @@ $${\rm sinc}^{2}x=\left(\cfrac{\sin\pi x}{\pi x}\right)^{2}$$
 2D Fourier transform pair: $\Pi(s)$    
 
 properties:
+
 $$\begin{cases}
 {\rm sinc}^{2}\ 0=1\\
 {\rm sinc}^{2}\ n=0 & n=\text{nonzero integer}\\
