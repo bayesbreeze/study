@@ -1,4 +1,18 @@
-##  傅立叶变化相关
+## Contents
+- [傅立叶变化相关](#fouriercode)
+- [Parseval's theorem](#parseval)
+- [Oddness and Evenness](#odd_even)
+- [Convolution](#covolution)
+- [Useful Functions](#functions)
+  - [Rectangle function](#func_rect)
+  - [Triangle Function](#func_tiangle)
+  - [Exponential functions](#func_exp)
+  - [Step function H(x)](#func_step)
+  - [Sign function, sign x](#func_sign)
+  - [Filtering or Interpolating function, sinc x](#func_sinc)
+
+
+##  傅立叶变化相关 <a id="fouriercode"></a>
 
 1. 原始写法：   
 k = fft(x)  
@@ -10,7 +24,7 @@ k = ifftshift(k_shift) #  用于计算
 
 所以， fftshift 和 ifftshift只是针对k空间信号
 
-## Parseval's theorem (Rayleigh's theorem or Power theorem)
+## Parseval's theorem (Rayleigh's theorem or Power theorem) <a id="parseval"></a>
 
 $$\int_{-\infty}^{\infty}|f(x)|^{2}dx=\int_{-\infty}^{\infty}|F(s)|^{2}ds$$
 
@@ -65,7 +79,7 @@ plt.title('Spectrum of the signal')
 plt.show()
 ```
 
-## Oddness and Evenness
+## Oddness and Evenness  <a id="odd_even"></a>
 $$
 \begin{array}{c}
 E(-x)=E(x)\\
@@ -130,20 +144,20 @@ print(result)
 print(result2)
 ```
 
-## Convolution
+## Convolution <a id="covolution"></a>
 $$h(x)=f(x)*g(x)=\int_{-\infty}^{\infty}f(u)g(x-u)\ du$$
 
 <center><img src="imgs/fft_convolution.jpg" width="400" /></center>
 
 Convolution finds extensive use in various fields. In signal processing, it is used for **filtering** and **smoothing** signals. In image processing, convolution is employed for tasks such as **edge detection** and **blurring**. In deep learning, convolutional neural networks **(CNNs)** use convolution to detect features in images and learn spatial patterns.
 
-## Useful Functions
+## Useful Functions <a id="functions"></a>
 
 <center><img src="imgs/func_all.jpg" width="350" /></center>
 
 <center><img src="imgs/func_symbols.jpg" width="350" /></center>
 
-### 1. Rectangle function
+### 1. Rectangle function <a id="func_rect"></a>
 
 $$\Pi(x)=\begin{cases}
 0 & |x|>\frac{1}{2}\\
@@ -162,7 +176,7 @@ $$f(x)=\Pi(x)\cos\pi x=\begin{cases}
 
 能结合convolution来计算running means. running mean就是在一定窗口期做的mean，有Simple Moving Average (SMA)，Weighted Moving Average (WMA)和Exponential Moving Average (EMA)。Rectagle function应该是SMA。
 
-### 3.Triangle Function
+### 2.Triangle Function <a id="func_tiangle"></a>
 
 $$\Lambda(x)=\begin{cases}
 0 & |x|>1\\
@@ -173,12 +187,12 @@ self-convolution of $\Pi(x)$
 
 <center><img src="imgs/func_triangle.jpg" width="350" /></center>
 
-### 4.Exponential functions
+### 3.Exponential functions <a id="func_exp"></a>
 <center><img src="imgs/func_exponential.jpg" width="450" /></center>
 
 <center><img src="imgs/func_gaussian.jpg" width="350" /></center>
 
-### 5.Step function H(x)
+### 4.Step function H(x) <a id="func_step"></a>
 
 $$H(x)=\begin{cases}
 0 & x<0\\
@@ -208,7 +222,7 @@ $$H(x)*f(x)=\int_{-\infty}^{\infty}f(x')H(x-x')dx'=\int_{-\infty}^{x}f(x')dx's$$
 
 $$f(x)=\cfrac{d}{dx}\left[H(x)*f(x)\right]$$
 
-### 6.Sign function, sign x
+### 4.Sign function, sign x <a id="func_sign"></a>
 $${\rm sgn}\ x=\begin{cases}
 -1 & x<0\\
 1 & x>0
@@ -217,7 +231,7 @@ $${\rm sgn}\ x=\begin{cases}
 $${\rm sgn}\ x=2H(x)-1$$
 <center><img src="imgs/func_sgn.jpg" width="350" /></center>
 
-### 7.Filtering or Interpolating function, sinc x
+### 5.Filtering or Interpolating function, sinc x <a id="func_sinc"></a>
 
 $${\rm sinc}\ x=\cfrac{\sin\pi x}{\pi x}$$
 1D Fourier transform pair: $\Pi(s)$    
